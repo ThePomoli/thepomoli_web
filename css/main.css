@@ -98,7 +98,7 @@ sub {
   bottom: -0.25em;
 }
 
-img {
+img, video {
   width: 100%;
   height: auto;
   display: block;
@@ -244,6 +244,8 @@ html, body {
   font-size: 100px;
   font-family: "Noto Sans TC", Arial, Helvetica, "微軟正黑體", Microsoft JhengHei, Apple LiGothic, "蘋果儷中黑";
   overflow-x: hidden;
+  background: url("../img/bg.png") no-repeat center/contain;
+  background-repeat: repeat !important;
 }
 
 #wrapper #main {
@@ -255,7 +257,7 @@ html, body {
 .loading {
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
-  background-color: #fff;
+  background-color: #1d1c37;
   position: fixed;
   top: 0;
   left: 0;
@@ -277,7 +279,7 @@ html, body {
   width: 0.2em;
   height: 0.2em;
   border-radius: 99999px;
-  background-color: #fff33e;
+  background-color: #cec1df;
   -webkit-animation-name: aniLoading;
           animation-name: aniLoading;
   -webkit-animation-iteration-count: infinite;
@@ -297,5 +299,22 @@ html, body {
 .loading .container .dot:last-of-type {
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
+}
+
+#homepage video {
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: brightness(1.05) contrast(0.98);
+          filter: brightness(1.05) contrast(0.98);
+}
+
+.sketch-container {
+  width: 100vw;
+  height: 250px;
+}
+
+#p5_loading {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */
