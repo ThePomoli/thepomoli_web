@@ -246,6 +246,7 @@ html, body {
   overflow-x: hidden;
   background: url("../img/bg.png") no-repeat center/contain;
   background-repeat: repeat !important;
+  font-family: "Noto Serif SC", serif;
 }
 
 #wrapper #main {
@@ -310,8 +311,41 @@ html, body {
 }
 
 .sketch-container {
-  width: 100vw;
-  height: 250px;
+  padding: 3em;
+}
+.sketch-container .settitle {
+  text-align: center;
+  color: #cec1df;
+  font-size: 2em;
+  font-weight: bold;
+}
+.sketch-container .setindex {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5em;
+  color: white;
+  line-height: 1.5em;
+}
+@media screen and (max-width: 768px) {
+  .sketch-container .setindex {
+    display: block;
+  }
+}
+.sketch-container .setindex .setp {
+  width: 30em;
+}
+.sketch-container .setindex .setp .setp_title {
+  font-size: 1.5em;
+}
+.sketch-container .setindex .setp div {
+  padding: 1em 0;
 }
 
 #p5_loading {

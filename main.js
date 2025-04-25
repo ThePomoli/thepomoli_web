@@ -3,31 +3,14 @@ $(document).ready(function () {
     $(".loading").fadeOut(1050);
 
     const $video = $("#homevideo");
-    if ($(window).width() <= 768) {
-        $video.attr("src", "./img/homebg_phone.webm")[0].load();
-    }
-
-    $(window).on("resize", function () {
-        const $video = $("#homevideo");
-        const isMobile = $(window).width() <= 768;
-        const currentSrc = $video.attr("src");
-    
-        if (isMobile && !currentSrc.includes("homebg_phone.webm")) {
-            $video.attr("src", "./img/homebg_phone.webm")[0].load();
-        } else if (!isMobile && !currentSrc.includes("homebg.webm")) {
-            $video.attr("src", "./img/homebg.webm")[0].load();
-        }
-    });
-
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("homevideo");
+    const videoSrc = (window.innerWidth < 768) ? "./img/homebg_phone.mp4" : "./img/homebg.mp4";
+    $video.attr("src", videoSrc);
 
     video.addEventListener('loadeddata', function () {
         video.currentTime = 0;
         video.play();
     });
+
 });
 
 
@@ -60,6 +43,7 @@ function createCardCircle(sketch, setFolder, imageCount) {
 
     sketch.draw = () => {
         sketch.clear();
+        rotationY += 0.3;
         rotationSpeed *= 0.95;
         rotationY += rotationSpeed;
         sketch.rotateY(rotationY);
@@ -67,6 +51,7 @@ function createCardCircle(sketch, setFolder, imageCount) {
         let radius = 150;
         let cardW = 80;
         let cardH = 120;
+        
       
         for (let i = 0; i < imageCount; i++) {
           sketch.push();
@@ -76,6 +61,7 @@ function createCardCircle(sketch, setFolder, imageCount) {
           let x = radius * sketch.sin(baseTheta);
           let z = radius * sketch.cos(baseTheta);
       
+          
           // 位移和朝内转向
           sketch.translate(x, 0, z);
           sketch.rotateY(sketch.atan2(x, z));
@@ -128,8 +114,8 @@ function makeRoundedCardImage(sketch, img, w, h, r) {
 }
 
 
-new p5((s) => createCardCircle(s, "img/set1", 6), "sketch1");
-new p5((s) => createCardCircle(s, "img/set2", 9), "sketch2");
-new p5((s) => createCardCircle(s, "img/set3", 4), "sketch3");
-new p5((s) => createCardCircle(s, "img/set4", 5), "sketch4");
-new p5((s) => createCardCircle(s, "img/set5", 6), "sketch5");
+new p5((s) => createCardCircle(s, "img/set1", 6), document.querySelector("#sketch1 .setcard"));
+new p5((s) => createCardCircle(s, "img/set2", 9), document.querySelector("#sketch2 .setcard"));
+new p5((s) => createCardCircle(s, "img/set3", 4), document.querySelector("#sketch3 .setcard"));
+new p5((s) => createCardCircle(s, "img/set4", 5), document.querySelector("#sketch4 .setcard"));
+new p5((s) => createCardCircle(s, "img/set5", 6), document.querySelector("#sketch5 .setcard"));
