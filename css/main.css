@@ -248,6 +248,11 @@ html, body {
   background-repeat: repeat !important;
   font-family: "Noto Serif SC", serif;
 }
+@media screen and (max-width: 768px) {
+  html, body {
+    background: url("../img/bg_phone.png") no-repeat center/contain;
+  }
+}
 
 #wrapper #main {
   position: relative;
