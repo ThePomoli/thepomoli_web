@@ -346,6 +346,11 @@ html, body {
 .sketch-container .setindex .setp {
   width: 30em;
 }
+@media screen and (max-width: 768px) {
+  .sketch-container .setindex .setp {
+    width: 100%;
+  }
+}
 .sketch-container .setindex .setp .setp_title {
   font-size: 1.5em;
 }
