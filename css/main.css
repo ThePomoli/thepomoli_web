@@ -357,6 +357,11 @@ html, body {
 .sketch-container .setindex .setp div {
   padding: 1em 0;
 }
+@media screen and (max-width: 768px) {
+  .sketch-container .setindex canvas {
+    width: 100%;
+  }
+}
 
 #p5_loading {
   display: none;
