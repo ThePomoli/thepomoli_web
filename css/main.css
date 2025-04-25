@@ -358,8 +358,8 @@ html, body {
   padding: 1em 0;
 }
 @media screen and (max-width: 768px) {
-  .sketch-container .setindex canvas {
-    width: 100%;
+  .sketch-container .setindex .setcard canvas {
+    width: 100% !important;
   }
 }
 
