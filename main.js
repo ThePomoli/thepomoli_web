@@ -1,8 +1,8 @@
-
 $(document).ready(function () {
     $(".loading").fadeOut(1050);
 
     const $video = $("#homevideo");
+    const video = $video.get(0);
     const videoSrc = (window.innerWidth < 768) ? "./img/homebg_phone.mp4" : "./img/homebg.mp4";
     $video.attr("src", videoSrc);
 
@@ -10,6 +10,7 @@ $(document).ready(function () {
         video.currentTime = 0;
         video.play();
     });
+
 
 });
 
